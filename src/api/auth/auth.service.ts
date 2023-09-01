@@ -71,9 +71,9 @@ export class AuthService {
 
       const findUser = await this.repo.findOne({ where: { email } });
 
-      console.log(findUser);
-      if (findUser)
-        return res.status(400).json({ message: 'User already exists' });
+      if (findUser) {
+        await emailSending(email, res);
+      }
 
       const hashpass = await bcrypt.hash(password, 12);
 
