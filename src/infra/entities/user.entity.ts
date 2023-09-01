@@ -7,10 +7,10 @@ import { Order } from './order.entity';
 
 @Entity({ name: 'users' })
 export class User extends BaseEntity {
-  @Column()
+  @Column({ nullable: true })
   image: string;
 
-  @Column()
+  @Column({ nullable: true })
   full_name: string;
 
   @Column({ nullable: false })

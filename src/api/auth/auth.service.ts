@@ -67,19 +67,17 @@ export class AuthService {
   // register
   async register(body: RegisterAuthDto, res: Response) {
     try {
-      const { image, full_name, phone_number, email, password } = body;
+      const { phone_number, email, password } = body;
 
       const findUser = await this.repo.findOne({ where: { email } });
 
       if (findUser) {
-        await emailSending(email, res);
+        return await emailSending(email, res);
       }
 
       const hashpass = await bcrypt.hash(password, 12);
 
       const data = this.repo.create({
-        image,
-        full_name,
         phone_number,
         password: hashpass,
         email,

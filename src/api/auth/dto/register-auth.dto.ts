@@ -8,14 +8,6 @@ import {
 
 export class RegisterAuthDto {
   @IsString()
-  @IsOptional()
-  image: string;
-
-  @IsString()
-  @IsOptional()
-  full_name: string;
-
-  @IsString()
   @IsNotEmpty()
   phone_number: string;
 

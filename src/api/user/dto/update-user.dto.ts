@@ -1,7 +1,5 @@
 import { PartialType } from '@nestjs/swagger';
 import {
-  IsAlphanumeric,
-  IsNumber,
   IsOptional,
   IsString,
 } from 'class-validator';
