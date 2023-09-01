@@ -8,6 +8,7 @@ import { ProductRepo } from 'src/infra/repositories/product.repo';
 import { UserRepo } from 'src/infra/repositories/user.repo';
 import { CreateFavoriteDto } from './dto/create-favorite.dto';
 import { UpdateFavoriteDto } from './dto/update-favorite.dto';
+import {Request} from "express"
 
 interface forUser extends Request {
   verify?: {

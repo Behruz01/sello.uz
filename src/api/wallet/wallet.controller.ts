@@ -1,12 +1,7 @@
 import {
   Controller,
-  Get,
   Post,
   Body,
-  Patch,
-  Param,
-  Delete,
-  UseGuards,
   Req,
 } from '@nestjs/common';
 import { WalletService } from './wallet.service';
@@ -14,6 +9,8 @@ import { CreateWalletDto } from './dto/create-wallet.dto';
 import { UpdateWalletDto } from './dto/update-wallet.dto';
 import { AuthGuard } from 'src/common/guards/auth.guard';
 import { PayDto } from './dto/pay.dto';
+import { Request } from 'express';
+
 
 @Controller('wallet')
 export class WalletController {

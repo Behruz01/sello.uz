@@ -6,6 +6,7 @@ import { Notification } from '../../infra/entities/notification.entity';
 import { NotificationRepo } from 'src/infra/repositories/natification.repo';
 import { User } from 'src/infra/entities/user.entity';
 import { UserRepo } from 'src/infra/repositories/user.repo';
+import { Request } from 'express';
 
 interface forUser extends Request {
   verify?: {

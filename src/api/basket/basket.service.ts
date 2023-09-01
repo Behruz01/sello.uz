@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
+import { Request } from 'express';
 import { Basket } from 'src/infra/entities/basket.entity';
 import { Product } from 'src/infra/entities/product.entity';
 import { User } from 'src/infra/entities/user.entity';

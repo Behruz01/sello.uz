@@ -13,6 +13,7 @@ import { OrderService } from './order.service';
 import { CreateOrderDto } from './dto/create-order.dto';
 import { UpdateOrderDto } from './dto/update-order.dto';
 import { AuthGuard } from 'src/common/guards/auth.guard';
+import { Request } from 'express';
 
 @Controller('order')
 export class OrderController {

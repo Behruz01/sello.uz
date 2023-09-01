@@ -9,6 +9,7 @@ import {
   UseGuards,
   Req,
 } from '@nestjs/common';
+import { Request } from 'express';
 import { NatificationService } from './natification.service';
 import { CreateNatificationDto } from './dto/create-natification.dto';
 import { UpdateNatificationDto } from './dto/update-natification.dto';

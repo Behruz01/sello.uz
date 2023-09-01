@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { async } from 'rxjs';
 import { Order } from 'src/infra/entities/order.entity';
 import { Product } from 'src/infra/entities/product.entity';
 import { User } from 'src/infra/entities/user.entity';
@@ -8,6 +7,7 @@ import { OrderRepo } from 'src/infra/repositories/order.repo';
 import { ProductRepo } from 'src/infra/repositories/product.repo';
 import { CreateOrderDto } from './dto/create-order.dto';
 import { UpdateOrderDto } from './dto/update-order.dto';
+import { Request } from 'express';
 
 interface forUser extends Request {
   verify?: {

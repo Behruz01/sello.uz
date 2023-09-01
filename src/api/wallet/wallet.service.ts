@@ -6,6 +6,8 @@ import { CreateWalletDto } from './dto/create-wallet.dto';
 import { UpdateWalletDto } from './dto/update-wallet.dto';
 import stripe from 'stripe';
 import { PayDto } from './dto/pay.dto';
+import { Request } from 'express';
+
 
 interface forUser extends Request {
   verify?: {

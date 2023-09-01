@@ -9,6 +9,7 @@ import {
   Req,
   UseGuards,
 } from '@nestjs/common';
+import { Request } from 'express';
 import { AuthGuard } from 'src/common/guards/auth.guard';
 import { BasketService } from './basket.service';
 import { CreateBasketDto } from './dto/create-basket.dto';

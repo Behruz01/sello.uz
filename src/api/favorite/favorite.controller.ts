@@ -9,6 +9,7 @@ import {
   UseGuards,
   Req,
 } from '@nestjs/common';
+import { Request } from 'express';
 import { FavoriteService } from './favorite.service';
 import { CreateFavoriteDto } from './dto/create-favorite.dto';
 import { UpdateFavoriteDto } from './dto/update-favorite.dto';
