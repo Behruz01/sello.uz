@@ -48,15 +48,17 @@ export class AuthService {
     try {
       const { email, password } = body;
 
-      const findAdmin = await this.adminrepo.findOne({ where: { email } });
-      if (!findAdmin) return { message: 'You are not admin!' };
+      // const findAdmin = await this.adminrepo.findOne({ where: { email } });
+      // if (!findAdmin) return { message: 'You are not admin!' };
+      if (email !== "admin@gmail.com")
+      return { message: 'You are not admin!' };
 
-      if (password !== findAdmin.password)
+      if (password !== "admin")
         return { message: 'You are not admin!' };
 
       const token = this.jwt.sign({
-        user_id: findAdmin.id,
-        role: findAdmin.role,
+        user_id: 1,
+        role: "admin",
       });
       return { token };
     } catch (error) {
