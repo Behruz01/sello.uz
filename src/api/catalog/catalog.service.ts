@@ -69,7 +69,13 @@ export class CatalogService {
   async findAll() {
     try {
       const data = await this.catalogRepo.find({
-        relations: ['categories', 'subcategories', 'brands', 'products'],
+        relations: [
+          'categories',
+          'subcategories',
+          'brands',
+          'products',
+          'products.discount',
+        ],
       });
       return { data };
     } catch (error) {

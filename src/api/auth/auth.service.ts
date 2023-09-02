@@ -95,6 +95,8 @@ export class AuthService {
       const { verifycode } = body;
 
       const { code, email } = req.cookies;
+      console.log(req.cookies);
+
       if (!code || code != verifycode) {
         return { message: 'Incorrect code!' };
       }

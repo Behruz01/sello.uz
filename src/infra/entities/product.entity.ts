@@ -41,19 +41,27 @@ export class Product extends BaseEntity {
   @OneToMany(() => Discount, (discount) => discount.product)
   discount: Discount;
 
-  @ManyToOne(() => Catalog, (catalog) => catalog.products)
+  @ManyToOne(() => Catalog, (catalog) => catalog.products,{
+    onDelete: 'CASCADE'
+  })
   @JoinColumn({ name: 'catalog_id' })
   catalog: Catalog;
 
-  @ManyToOne(() => Category, (category) => category.products)
+  @ManyToOne(() => Category, (category) => category.products,{
+    onDelete: 'CASCADE'
+  })
   @JoinColumn({ name: 'category_id' })
   category: Category;
 
-  @ManyToOne(() => Subcategory, (subcategory) => subcategory.products)
+  @ManyToOne(() => Subcategory, (subcategory) => subcategory.products,{
+    onDelete: 'CASCADE'
+  })
   @JoinColumn({ name: 'subcategory_id' })
   subcategory: Subcategory;
 
-  @ManyToOne(() => Brand, (brand) => brand.products)
+  @ManyToOne(() => Brand, (brand) => brand.products,{
+    onDelete: 'CASCADE'
+  })
   @JoinColumn({ name: 'brand_id' })
   brand: Brand;
 }

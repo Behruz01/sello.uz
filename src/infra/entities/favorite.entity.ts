@@ -5,11 +5,15 @@ import { User } from './user.entity';
 
 @Entity({ name: 'favorites' })
 export class Favorite extends BaseEntity {
-  @ManyToOne(() => User, (user) => user.favorites)
+  @ManyToOne(() => User, (user) => user.favorites,{
+    onDelete: 'CASCADE'
+  })
   @JoinColumn({ name: 'user_id' })
   user: User;
 
-  @ManyToOne(() => Product, (product) => product.favorites)
+  @ManyToOne(() => Product, (product) => product.favorites,{
+    onDelete: 'CASCADE'
+  })
   @JoinColumn({ name: 'product_id' })
   product: Product;
 }

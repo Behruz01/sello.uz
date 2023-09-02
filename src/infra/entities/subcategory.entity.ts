@@ -11,11 +11,15 @@ export class Subcategory extends BaseEntity {
   @Column({ nullable: false })
   subcategory_name: string;
 
-  @ManyToOne(() => Catalog, (catalog) => catalog.subcategories)
+  @ManyToOne(() => Catalog, (catalog) => catalog.subcategories,{
+    onDelete: 'CASCADE'
+  })
   @JoinColumn({ name: 'catalog_id' })
   catalog: Catalog;
 
-  @ManyToOne(() => Category, (category) => category.subcategories)
+  @ManyToOne(() => Category, (category) => category.subcategories,{
+    onDelete: 'CASCADE'
+  })
   @JoinColumn({ name: 'category_id' })
   category: Category;
 

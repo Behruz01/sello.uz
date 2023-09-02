@@ -11,7 +11,9 @@ export class Category extends BaseEntity {
   @Column({ nullable: false })
   category_name: string;
 
-  @ManyToOne(() => Catalog, (catalog) => catalog.categories)
+  @ManyToOne(() => Catalog, (catalog) => catalog.categories,{
+    onDelete: 'CASCADE'
+  })
   @JoinColumn({ name: 'catalog_id' })
   catalog: Catalog;
 

@@ -5,11 +5,15 @@ import { User } from './user.entity';
 
 @Entity({ name: 'baskets' })
 export class Basket extends BaseEntity {
-  @ManyToOne(() => User, (user) => user.basket)
+  @ManyToOne(() => User, (user) => user.basket, {
+    onDelete: 'CASCADE',
+  })
   @JoinColumn({ name: 'user_id' })
   user: User;
 
-  @ManyToOne(() => Product, (product) => product.basket)
+  @ManyToOne(() => Product, (product) => product.basket, {
+    onDelete: 'CASCADE',
+  })
   @JoinColumn({ name: 'product_id' })
   product: Product;
 }

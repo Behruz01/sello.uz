@@ -41,11 +41,15 @@ export class Order extends BaseEntity {
   @Column({ default: 'prosess' })
   status: string;
 
-  @ManyToOne(() => User, (user) => user.orders)
+  @ManyToOne(() => User, (user) => user.orders,{
+    onDelete: 'CASCADE'
+  })
   @JoinColumn({ name: 'user_id' })
   user: User;
 
-  @ManyToOne(() => Product, (product) => product.order)
+  @ManyToOne(() => Product, (product) => product.order,{
+    onDelete: 'CASCADE'
+  })
   @JoinColumn({ name: 'product_id' })
   product: Product;
 }

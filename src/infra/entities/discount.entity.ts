@@ -10,7 +10,9 @@ export class Discount extends BaseEntity {
   @Column({ nullable: false, type: 'timestamptz' })
   end_time: Date;
 
-  @ManyToOne(() => Product, (product) => product.discount)
+  @ManyToOne(() => Product, (product) => product.discount,{
+    onDelete: 'CASCADE'
+  })
   @JoinColumn({ name: 'product_id' })
   product: Product;
 }
