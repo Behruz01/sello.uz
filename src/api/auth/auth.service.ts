@@ -69,9 +69,7 @@ export class AuthService {
   // register
   async register(body: RegisterAuthDto, res: Response) {
     try {
-      const { phone_number, email, password } = body;
-      console.log("salom");
-      
+      const { phone_number, email, password } = body;      
 
       const findUser = await this.repo.findOne({ where: { email } });
 
@@ -99,7 +97,6 @@ export class AuthService {
       const { verifycode } = body;
 
       const { code, email } = req.cookies;
-      console.log(req.cookies);
 
       if (!code || code != verifycode) {
         return { message: 'Incorrect code!' };
