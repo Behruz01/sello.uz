@@ -70,6 +70,8 @@ export class AuthService {
   async register(body: RegisterAuthDto, res: Response) {
     try {
       const { phone_number, email, password } = body;
+      console.log("salom");
+      
 
       const findUser = await this.repo.findOne({ where: { email } });
 
